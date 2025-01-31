@@ -21,7 +21,7 @@ Get-AzCosmosDbClientEncryptionKey -AccountName cosmos-nosql-cmk -DatabaseName my
 ////////////////////////////////////////////////////////////////////
 //// Variables
 
-string cosmosEndpoint = "https://cosmos-nosql-cmk.documents.azure.com:443/";
+string cosmosEndpoint = "< cosmos uri >";
 string cosmosDatabase = "myDatabase";
 string cosmosContainer = "myContainer";
 //string cosmosKeyName = "my-key";
