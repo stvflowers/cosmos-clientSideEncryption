@@ -13,7 +13,7 @@ using Microsoft.Azure.Cosmos.Fluent;
 - Create client encryption key using PowerShell
 
 /// PowerShell to create new key
-$myKeyWrapMetadataObject = [Microsoft.Azure.Commands.CosmosDB.Models.PSSqlKeyWrapMetadata]::new([Microsoft.Azure.Management.CosmosDB.Models.KeyWrapMetadata]::new("my-key","AZURE_KEY_VAULT", "https://stflower-keyvault.vault.azure.net/keys/my-key/60b0ff442659463ead66434aabc40eb0", "RSA-OAEP"))
+$myKeyWrapMetadataObject = [Microsoft.Azure.Commands.CosmosDB.Models.PSSqlKeyWrapMetadata]::new([Microsoft.Azure.Management.CosmosDB.Models.KeyWrapMetadata]::new("<your-key-name>","AZURE_KEY_VAULT", "https://<your-key-vault-name>.vault.azure.net/keys/my-key/<your-key-version>", "RSA-OAEP"))
 New-AzCosmosDbClientEncryptionKey -AccountName cosmos-nosql-cmk -DatabaseName myDatabase -ResourceGroupName rg-data -Name my-key -EncryptionAlgorithmName "AEAD_AES_256_CBC_HMAC_SHA256" -KeyWrapMetadata $myKeyWrapMetadataObject
 Get-AzCosmosDbClientEncryptionKey -AccountName cosmos-nosql-cmk -DatabaseName myDatabase -ResourceGroupName rg-data
 */
